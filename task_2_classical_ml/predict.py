@@ -3,7 +3,7 @@ import joblib
 
 def main():
     predict_df = pd.read_csv("./data/hidden_test.csv")   
-    loaded_model = joblib.load('xgb_model.pkl')
+    loaded_model = joblib.load('./models/xgb_model.pkl')
 
     y_pred = loaded_model.predict(predict_df)  
     

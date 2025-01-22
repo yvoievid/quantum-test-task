@@ -52,8 +52,8 @@ def main():
 
     print("Saving the model")
     
-    joblib.dump(best_xgb, 'xgb_model.pkl')
-    print("Model saved as 'xgb_model.pkl'")
+    joblib.dump(best_xgb, './models/xgb_model.pkl')
+    print("Model saved as './models/xgb_model.pkl'")
     
 if __name__ == "__main__":
     main()
