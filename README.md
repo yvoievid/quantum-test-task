@@ -1,16 +1,21 @@
-# Quantum Test Task 
+# Quantum Test Task
 
-This is the solution of Quatum test task, please follow the instructions to test it.
+This document outlines the solution to the Quantum test task and provides instructions for testing it.
+
+---
 
 ## Prerequisites
+
 - Python 3.7 or higher
 - `pip` (Python package manager)
 
 ---
 
-## Step 1: Create a Virtual Environment with `venv`
+## Step 1: Create a Virtual Environment
 
-Run the following command to create a virtual environment in the desired directory:
+To ensure a clean and isolated environment for the project, create a virtual environment using `venv`:
+
+### Command:
 
 ```bash
 python3 -m venv test_task_env
@@ -21,8 +26,6 @@ Or, if `python` points to Python 3 on your system:
 ```bash
 python -m venv test_task_env
 ```
-
-
 
 ---
 
@@ -42,7 +45,7 @@ test_task_env\Scripts\activate
 
 Once activated, you should see the virtual environment name in your terminal prompt.
 
-then 
+### Upgrade `pip`:
 
 ```bash
 pip install --upgrade pip
@@ -52,6 +55,7 @@ pip install --upgrade pip
 
 ## Step 3: Install Dependencies
 
+Install all required dependencies from the `requirements.txt` file:
 
 ```bash
 pip install -r requirements.txt
@@ -59,41 +63,61 @@ pip install -r requirements.txt
 
 ---
 
-## Tak 1: Counting islands. Classical Algorithms
+## Task 1: Counting Islands (Classical Algorithms)
+
+Explore the algorithm and its implementation in the `task_1_islands` Jupyter notebook.
 
 ---
 
-You can find the algoright and testing of it in `task_1_islands` jupyter notebook. 
+## Task 2: Regression on Tabular Data (General Machine Learning)
 
-## Task 2: Regression on the tabular data. General Machine Learning
+The solution includes:
 
-You can find the train, and predict scripts in `task_2_classical_ml` and Exploritory Data Analysis in file `eda.ipynb`
+- Training and prediction scripts in the `task_2_classical_ml` folder.
+- Exploratory Data Analysis (EDA) in the `eda.ipynb` file.
 
-I have used XGBoost as this ensemble model has the best RMSE across all tested ones.
+### Model Details:
 
-to train the model run:
+- **Algorithm**: XGBoost (chosen for its superior RMSE across all tested models).
+
+### To train the model:
+
 ```bash
 python train.py
 ```
 
-and run following command to create predictions:
+### To generate predictions:
+
 ```bash
 python predict.py
 ```
-all predictions along with training data are stored in `task_2_classical_ml/data` folder 
+
+All predictions, along with the training data, are stored in the `task_2_classical_ml/data` folder.
 
 ---
 
-## Task 3:
+## Task 3: MNIST Classifier (OOP)
 
-to test the Third test task run the following command to install it as module
+### Installation:
+
+To test the third task, install it as a module using the following command:
 
 ```bash
 cd ./task_3_mnist
 pip install -e .
 ```
 
-After that you can see testing of solution in `task_3_experiment.ipynb`
+### Testing:
 
+You can find the testing details in the `task_3_experiment.ipynb` file.
 
-### Author: Yurii Voievidka
+---
+
+## Author
+
+**Yurii Voievidka**
+
+---
+
+### Thank you for reviewing this solution! If you have any questions or feedback, feel free to reach out.
+
