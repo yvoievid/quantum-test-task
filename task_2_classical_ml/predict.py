@@ -1,15 +1,23 @@
 import pandas as pd
-import joblib
+import json
+from models.linear_regression import SimpleLinearRegression
 
 def main():
-    predict_df = pd.read_csv("./data/hidden_test.csv")   
-    loaded_model = joblib.load('./models/xgb_model.pkl')
-
-    y_pred = loaded_model.predict(predict_df)  
+    with open("./params/linear_model.json", "r") as file:
+        model_params = json.load(file)
     
-    prediction_df = pd.DataFrame(y_pred, columns=["target"])
-    prediction_df.to_csv("./data/predictions.csv")
-    print("Predictions saved to ./data/predictions.csv")
+    model = SimpleLinearRegression(
+        intercept=model_params["intercept"],
+        coefficients=model_params["coefficients"]
+    )
+
+    test_df = pd.read_csv("./data/hidden_test.csv") 
+    X_new = test_df[['6', '7']].values      # Select important features
+    predictions = model.predict(X_new)
+
+    test_df['predictions'] = predictions
+    test_df.to_csv("predictions.csv", index=False)
+    print("Predictions saved to predictions.csv")
     
 if __name__ == "__main__":
     main()
